@@ -14,6 +14,7 @@ const inputNumber = document.querySelector('input[name="number"]')
 const inputSpecial = document.querySelector('input[name="special"]')
 
 const button = document.querySelector("button")
+const buttonCopy = document.querySelector("i")
 
 // Property password
 let passwordProperty = {
@@ -41,11 +42,21 @@ inputSpecial.addEventListener("change", () => {
 })
 // END property password
 
-
+function arrayShuffle(a) {
+    var l = a.length, t, r;
+    while (0 !== l) {
+      r = Math.floor(Math.random() * l);
+      l -= 1;
+      t = a[l];
+      a[l] = a[r];
+      a[r] = t;
+    }
+    return a;
+}
 
 button.addEventListener("click", () => {
 
-    alert(passwordProperty.ifSpecial)
+    resultPassword.innerText = ""
 
     passwordGenerate = []
 
@@ -67,6 +78,16 @@ button.addEventListener("click", () => {
 
     }
 
-    alert(passwordGenerate);
+    passwordGenerate = arrayShuffle(passwordGenerate)
+
+    passwordGenerate = resultPassword.innerText = passwordGenerate.join('')
     
+})
+
+buttonCopy.addEventListener("click", () => {
+    buttonCopy.style.color = "red"
+    navigator.clipboard.writeText(passwordGenerate);
+    window.setTimeout(()=>{
+        buttonCopy.style.color = "white"
+    }, 1000)
 })
