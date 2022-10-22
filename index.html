@@ -5,12 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password generator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+
+    <script defer src="script.js"></script>
 </head>
 <body>
 
+    <main class="box-generator">
+        <p class="label-result">Votre mot de passe</p>
 
+        <p class="result-password"></p>
+
+        <p class="label-len">Taille du mot de passe : <span>0</span> caractères.</p>
+
+        <input type="range" min="8" max="50" name="len" id="len">
+
+        <div>
+            <input type="checkbox" name="min" id="min">
+            <label for="min">Contient des caractères minuscules</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="maj" id="maj">
+            <label for="maj">Contient des caractères majuscules</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="number" id="number">
+            <label for="number">Contient des nombres</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="special" id="special">
+            <label for="special">Contient des symboles spéciaux</label>
+        </div>
+
+    </main>
     
 </body>
 </html>
