@@ -27,18 +27,22 @@ let passwordProperty = {
 inputRange.addEventListener("change", () => {
     labelLen.innerText = inputRange.value
     passwordProperty.len = inputRange.value
+    generatePassword()
 })
 
 inputMaj.addEventListener("change", () => {
     passwordProperty.ifMaj = inputMaj.checked;
+    generatePassword()
 })
 
 inputNumber.addEventListener("change", () => {
     passwordProperty.ifNumber = inputNumber.checked;
+    generatePassword()
 })
 
 inputSpecial.addEventListener("change", () => {
     passwordProperty.ifSpecial = inputSpecial.checked;
+    generatePassword()
 })
 // END property password
 
@@ -54,8 +58,7 @@ function arrayShuffle(a) {
     return a;
 }
 
-button.addEventListener("click", () => {
-
+function generatePassword() {
     resultPassword.innerText = ""
 
     passwordGenerate = []
@@ -80,14 +83,21 @@ button.addEventListener("click", () => {
 
     passwordGenerate = arrayShuffle(passwordGenerate)
 
-    passwordGenerate = resultPassword.innerText = passwordGenerate.join('')
+    passwordGenerate = passwordGenerate.join('')
+
+    resultPassword.innerText = passwordGenerate
+}
+
+button.addEventListener("click", () => {
+
+    generatePassword()
     
 })
 
 buttonCopy.addEventListener("click", () => {
-    buttonCopy.style.color = "red"
+    buttonCopy.style.textShadow = "0px 0px 10px cyan"
     navigator.clipboard.writeText(passwordGenerate);
     window.setTimeout(()=>{
-        buttonCopy.style.color = "white"
+        buttonCopy.style.textShadow = "none"
     }, 1000)
 })
