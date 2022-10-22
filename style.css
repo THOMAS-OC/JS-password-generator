@@ -7,8 +7,8 @@
 body {
     height: 100vh;
     width: 100vw;
-    background-color: black;
     color: white;
+    background: linear-gradient(360deg, #292929 0%, #000000 100%);
     overflow: hidden;
     font-family: 'Courier Prime', monospace;
 }
@@ -18,8 +18,10 @@ body {
     margin: 50px auto 0px auto;
     width: 650px;
     height: 470px;
-    max-width: 90vw;
+    max-width: 80vw;
     border: 2px solid white;
+    background-color: rgb(21, 21, 21);
+    border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
